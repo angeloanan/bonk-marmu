@@ -3,6 +3,7 @@ import 'tailwindcss/tailwind.css'
 
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
+import Script from 'next/script'
 
 type CustomAppProps = AppProps & {
   Component: NextPage & {
@@ -16,6 +17,10 @@ function CustomApp({ Component, pageProps }: CustomAppProps) {
   ) : (
     <div className='bg-gray-100 min-h-screen'>
       <Component {...pageProps} />
+      <Script
+        src='https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js'
+        strategy='beforeInteractive'
+      />
     </div>
   )
 }
