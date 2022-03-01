@@ -112,6 +112,8 @@ dist
 !.yarn/sdks
 !.yarn/versions
 
+out
+
 # Generated sitemap and robots
 public/sitemap.xml
 public/robots.txt
