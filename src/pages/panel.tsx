@@ -25,7 +25,8 @@ export const getStaticProps: GetStaticProps<LeaderboardPageProps> = async () => 
         '/api/leaderboard': data.map((u) => ({ username: u.userName, bonkCount: u.count }))
       }
     },
-    notFound: false
+    notFound: false,
+    revalidate: 60
   }
 }
 
