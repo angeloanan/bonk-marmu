@@ -11,11 +11,17 @@ type CustomAppProps = AppProps & {
   }
 }
 
-function CustomApp({ Component, pageProps }: CustomAppProps) {
-  return Component.disableLayout ? (
-    <Component {...pageProps} />
+function CustomApp(Props: CustomAppProps) {
+  return Props.Component.disableLayout ? (
+    <Props.Component {...Props.pageProps} />
   ) : (
-    <div className='bg-gray-100 min-h-screen'>
+    <StyledPage {...Props} />
+  )
+}
+
+const StyledPage = ({ Component, pageProps }: CustomAppProps) => {
+  return (
+    <div className='stylized-bg min-h-screen bg-neutral-100'>
       <Component {...pageProps} />
       <Script
         src='https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js'
