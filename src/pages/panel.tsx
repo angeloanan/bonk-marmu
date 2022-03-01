@@ -3,7 +3,7 @@ import Link from 'next/link'
 import * as React from 'react'
 import useSWR from 'swr'
 
-import { fetchLeaderboardData } from './api/leaderboard.js'
+import { fetchLeaderboardData } from './api/leaderboard'
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
