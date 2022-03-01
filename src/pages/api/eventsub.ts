@@ -60,30 +60,34 @@ const TwitchHandler: NextApiHandler = async (req, res) => {
 
     // Actual stuff below
 
-    case 'channel.channel_points_custom_reward_redemption.add': {
-      const data = req.body
+    case 'notification': {
+      switch (req.body.subscription.type) {
+        case 'channel.channel_points_custom_reward_redemption.add': {
+          const data = req.body.event
 
-      await prisma.user.upsert({
-        where: {
-          userId: data.user_id
-        },
-        create: {
-          userId: data.user_id,
-          userName: data.user_id,
-          count: 1
-        },
-        update: {
-          count: {
-            increment: 1
-          }
+          await prisma.user.upsert({
+            where: {
+              userId: data.user_id
+            },
+            create: {
+              userId: data.user_id,
+              userName: data.user_id,
+              count: 1
+            },
+            update: {
+              count: {
+                increment: 1
+              }
+            }
+          })
         }
-      })
+      }
 
       return res.status(200).send('OK')
     }
 
     default: {
-      return res.status(200).send('OK')
+      return res.status(501).send('Not Implemented')
     }
   }
 }
