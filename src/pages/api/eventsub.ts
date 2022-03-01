@@ -71,7 +71,7 @@ const TwitchHandler: NextApiHandler = async (req, res) => {
             },
             create: {
               userId: data.user_id,
-              userName: data.user_id,
+              userName: data.user_name,
               count: 1
             },
             update: {
