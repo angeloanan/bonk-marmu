@@ -14,7 +14,7 @@ const Callback: NextApiHandler = async (req, res) => {
         version: '1',
         condition: {
           broadcaster_user_id: '251278698',
-          reward_id: 'Omarwoof'
+          reward_id: '96959d22-f18c-43cc-93dc-0b18e2774f1a'
         },
         transport: {
           method: 'webhook',
