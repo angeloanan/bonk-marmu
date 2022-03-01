@@ -5,7 +5,8 @@ import useSWR from 'swr'
 
 import { fetchLeaderboardData } from './api/leaderboard'
 
-const fetcher = (url: string) => fetch(url).then((r) => r.json())
+const fetcher = (url: string) =>
+  fetch('https://bonkmarmu-leaderboard.vercel.app' + url).then((r) => r.json())
 const NumberFormatter = Intl.NumberFormat('en-US', {
   compactDisplay: 'short',
   notation: 'standard'
