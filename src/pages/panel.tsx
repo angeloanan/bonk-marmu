@@ -80,7 +80,14 @@ const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
         <BonkTable fallbackData={props.fallback['/api/leaderboard']} />
       </main>
 
-      <footer className='text-xs font-light'>🏳‍⚧ Made by falinko our beloved</footer>
+      <footer className='text-xs font-light flex-shrink-0'>
+        🏳‍⚧ 🏳️‍🌈 Made by{' '}
+        <Link href='https://angeloanan.xyz' passHref>
+          <a className='hover:text-blue-600 hover:underline' target='_blank'>
+            Angelo!
+          </a>
+        </Link>
+      </footer>
     </div>
   )
 }
