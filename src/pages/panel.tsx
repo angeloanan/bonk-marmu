@@ -36,7 +36,8 @@ export const getStaticProps: GetStaticProps<LeaderboardPageProps> = async () => 
 
 const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
   const { data } = useSWR<LeaderboardData[]>('/api/leaderboard', fetcher, {
-    fallback: { '/api/leaderboard': fallbackData }
+    fallback: { '/api/leaderboard': fallbackData },
+    refreshInterval: 60000
   })
 
   return (
