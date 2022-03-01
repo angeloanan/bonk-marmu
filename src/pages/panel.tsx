@@ -78,7 +78,7 @@ const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
     <div className='flex min-h-screen flex-col items-center justify-center gap-2 p-2'>
       <header className='flex-shrink-0 '>
         <div className='flex flex-col items-center text-4xl font-extrabold uppercase'>Bonk!</div>
-        <div className='flex flex-col items-center text-sm font-light'>
+        <div className='flex flex-col items-center text-center text-sm font-light'>
           Your trusty Bonk™️ leaderboard
         </div>
       </header>
