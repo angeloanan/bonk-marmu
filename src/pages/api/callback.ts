@@ -18,7 +18,7 @@ const Callback: NextApiHandler = async (req, res) => {
         },
         transport: {
           method: 'webhook',
-          callback: 'https://bonkmarmu-leaderboard-pn5kim6xq-angewo.vercel.app/api/eventsub',
+          callback: 'https://bonkmarmu-leaderboard.vercel.app/api/eventsub',
           secret: process.env.TWITCH_SECRET
         }
       })
