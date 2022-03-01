@@ -1,0 +1,87 @@
+{
+  "allowHttpBackend": false,
+  "backendCommand": "",
+  "backendFolderName": "",
+  "certificateExceptions": [],
+  "extensionViews": [
+    {
+      "channelId": "74219053",
+      "configurationAnchor": "panel",
+      "displayChannelName": "angelopogu",
+      "features": {
+        "isBitsEnabled": false,
+        "isChatEnabled": false,
+        "isSubscriptionStatusAvailable": false
+      },
+      "frameSize": {
+        "width": 1280,
+        "height": 720
+      },
+      "id": "1",
+      "isPopout": false,
+      "label": "DesktopPanel",
+      "linked": false,
+      "linkedUserId": "",
+      "orientation": "Portrait",
+      "type": "panel",
+      "viewerType": "Broadcaster"
+    }
+  ],
+  "manifest": {
+    "anchor": "panel",
+    "assetUrls": [],
+    "authorName": "Christopher Angelo",
+    "bitsEnabled": false,
+    "canInstall": true,
+    "configUrl": "http://localhost:3000/config",
+    "configurationLocation": "none",
+    "description": "",
+    "eulaTosUrl": "",
+    "hasChatSupport": false,
+    "iconUrl": "",
+    "iconUrls": {},
+    "id": "sohzczuav4izhywl7yprw5lxubtfqn",
+    "installationCount": -42,
+    "liveConfigUrl": "",
+    "name": "Bonk-leaderboard",
+    "panelHeight": 500,
+    "privacyPolicyUrl": "",
+    "requestIdentityLink": false,
+    "requiredBroadcasterAbilities": [],
+    "screenshotUrls": [],
+    "sku": "",
+    "state": "Testing",
+    "subscriptionsSupportLevel": "none",
+    "summary": "",
+    "supportEmail": "angelo@angeloanan.xyz",
+    "vendorCode": "",
+    "version": "0.0.1",
+    "viewerSummary": "",
+    "viewerUrl": "http://localhost:3000/panel",
+    "viewerUrls": {
+      "mobile": "http://localhost:3000/mobile",
+      "panel": "http://localhost:3000/panel"
+    },
+    "views": {
+      "mobile": {
+        "viewerUrl": "http://localhost:3000/mobile"
+      },
+      "panel": {
+        "viewerUrl": "http://localhost:3000/panel",
+        "height": 500,
+        "canLinkExternalContent": false
+      },
+      "config": {
+        "viewerUrl": "http://localhost:3000/config",
+        "canLinkExternalContent": false
+      }
+    },
+    "whitelistedConfigUrls": [],
+    "whitelistedPanelUrls": []
+  },
+  "frontendCommand": "yarn dev",
+  "frontendFolderName": "http://localhost:3000",
+  "name": "Bonk-leaderboard",
+  "usingRandomFrontendHostingPort": false,
+  "version": 3
+}

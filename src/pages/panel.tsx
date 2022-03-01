@@ -1,23 +1,39 @@
-import { NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import Link from 'next/link'
 import * as React from 'react'
+import useSWR from 'swr'
+
+import { fetchLeaderboardData } from './api/leaderboard.js'
+
+const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
 interface LeaderboardData {
   username: string
   bonkCount: number
 }
 
-const SampleData: LeaderboardData[] = [
-  { username: 'AngeloPogU', bonkCount: 739 },
-  { username: 'OmarOurWoofWoof', bonkCount: 694 },
-  { username: 'OmarSmells', bonkCount: 537 },
-  { username: 'FleebenWhoop', bonkCount: 442 },
-  { username: 'UwUmyOwO', bonkCount: 391 },
-  { username: 'DoughnoughtJack', bonkCount: 368 },
-  { username: 'DutchMTC', bonkCount: 1 }
-]
+interface LeaderboardPageProps {
+  fallback: { '/api/leaderboard': LeaderboardData[] }
+}
 
-const BonkTable = () => {
+export const getStaticProps: GetStaticProps<LeaderboardPageProps> = async () => {
+  const data = await fetchLeaderboardData()
+
+  return {
+    props: {
+      fallback: {
+        '/api/leaderboard': data.map((u) => ({ username: u.userName, bonkCount: u.count }))
+      }
+    },
+    notFound: false
+  }
+}
+
+const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
+  const { data } = useSWR<LeaderboardData[]>('/api/leaderboard', fetcher, {
+    fallback: { '/api/leaderboard': fallbackData }
+  })
+
   return (
     <table className='border w-full rounded'>
       <thead>
@@ -28,7 +44,7 @@ const BonkTable = () => {
         </tr>
       </thead>
       <tbody>
-        {SampleData.map((data, index) => (
+        {data?.map((data, index) => (
           <tr key={index}>
             <td className='px-1 text-center'>{index + 1}</td>
             <td className='px-1'>
@@ -49,7 +65,7 @@ const BonkTable = () => {
   )
 }
 
-const PanelPage: NextPage = () => {
+const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
   return (
     <div className='p-2 flex flex-col justify-center gap-2 h-screen'>
       <header>
@@ -60,7 +76,7 @@ const PanelPage: NextPage = () => {
       </header>
 
       <main className='flex-1'>
-        <BonkTable />
+        <BonkTable fallbackData={props.fallback['/api/leaderboard']} />
       </main>
 
       <footer className='text-xs font-light'>🏳‍⚧ Made by falinko our beloved</footer>
