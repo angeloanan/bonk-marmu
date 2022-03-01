@@ -42,7 +42,7 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
   return (
     <table className='border w-full rounded'>
       <thead>
-        <tr>
+        <tr className='sticky top-0 bg-neutral-300 z-10'>
           <th className='px-1 w-8'>#</th>
           <th className='px-1'>Username</th>
           <th className='px-1 w-12'>Bonks</th>
@@ -74,15 +74,15 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
 
 const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
   return (
-    <div className='p-2 flex flex-col justify-center gap-2 h-screen'>
-      <header>
+    <div className='p-2 flex flex-col justify-center gap-2 min-h-screen'>
+      <header className='flex-shrink-0 '>
         <div className='uppercase flex flex-col items-center text-4xl font-extrabold'>Bonk!</div>
         <div className='flex flex-col items-center font-light text-sm'>
           Your trusty Bonk™️ leaderboard
         </div>
       </header>
 
-      <main className='flex-1'>
+      <main className='flex-shrink basis-0 flex-1 overflow-y-auto'>
         <BonkTable fallbackData={props.fallback['/api/leaderboard']} />
       </main>
 
