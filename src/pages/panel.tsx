@@ -6,6 +6,10 @@ import useSWR from 'swr'
 import { fetchLeaderboardData } from './api/leaderboard'
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
+const NumberFormatter = Intl.NumberFormat('en-US', {
+  compactDisplay: 'short',
+  notation: 'standard'
+})
 
 interface LeaderboardData {
   username: string
@@ -58,7 +62,9 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
                 </a>
               </Link>
             </td>
-            <td className='px-1 text-right font-mono font-medium'>{data.bonkCount}</td>
+            <td className='px-1 text-right font-mono font-medium'>
+              {NumberFormatter.format(data.bonkCount)}
+            </td>
           </tr>
         ))}
       </tbody>
