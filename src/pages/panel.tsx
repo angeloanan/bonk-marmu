@@ -40,12 +40,12 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
   })
 
   return (
-    <table className='border w-full rounded'>
+    <table className='w-full max-w-prose rounded border'>
       <thead>
-        <tr className='sticky top-0 bg-neutral-300 z-10'>
-          <th className='px-1 w-8'>#</th>
+        <tr className='sticky top-0 z-10 bg-neutral-300'>
+          <th className='w-8 px-1'>#</th>
           <th className='px-1'>Username</th>
-          <th className='px-1 w-12'>Bonks</th>
+          <th className='w-12 px-1'>Bonks</th>
         </tr>
       </thead>
       <tbody>
@@ -55,7 +55,7 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
             <td className='px-1'>
               <Link href={`https://twitch.tv/${data.username}`} passHref>
                 <a
-                  className='hover:underline hover:font-medium hover:text-blue-600'
+                  className='hover:font-medium hover:text-blue-600 hover:underline'
                   target='_blank'
                 >
                   {data.username}
@@ -74,25 +74,27 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
 
 const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
   return (
-    <div className='p-2 flex flex-col justify-center gap-2 min-h-screen'>
+    <div className='flex min-h-screen flex-col items-center justify-center gap-2 p-2'>
       <header className='flex-shrink-0 '>
-        <div className='uppercase flex flex-col items-center text-4xl font-extrabold'>Bonk!</div>
-        <div className='flex flex-col items-center font-light text-sm'>
+        <div className='flex flex-col items-center text-4xl font-extrabold uppercase'>Bonk!</div>
+        <div className='flex flex-col items-center text-sm font-light'>
           Your trusty Bonk™️ leaderboard
         </div>
       </header>
 
-      <main className='flex-shrink basis-0 flex-1 overflow-y-auto'>
+      <main className='flex w-full flex-1 flex-shrink basis-0 flex-col items-center overflow-y-auto '>
         <BonkTable fallbackData={props.fallback['/api/leaderboard']} />
       </main>
 
-      <footer className='text-xs font-light flex-shrink-0'>
-        🏳‍⚧ 🏳️‍🌈 Made by{' '}
-        <Link href='https://angeloanan.xyz' passHref>
-          <a className='hover:text-blue-600 hover:underline' target='_blank'>
-            Angelo!
-          </a>
-        </Link>
+      <footer className='w-full max-w-prose flex-shrink-0 font-light'>
+        <span className='text-xs'>
+          🏳‍⚧ 🏳️‍🌈 Made by{' '}
+          <Link href='https://angeloanan.xyz' passHref>
+            <a className='hover:text-blue-600 hover:underline' target='_blank'>
+              Angelo!
+            </a>
+          </Link>
+        </span>
       </footer>
     </div>
   )
