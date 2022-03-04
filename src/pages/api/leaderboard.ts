@@ -13,7 +13,6 @@ const Leaderboard: NextApiHandler = async (req, res) => {
 
 export const fetchLeaderboardData = async () => {
   return prisma.user.findMany({
-    take: 25,
     orderBy: {
       count: 'desc'
     }
