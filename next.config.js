@@ -20,7 +20,8 @@ const nextConfig = {
         destination: '/panel'
       }
     ]
-  }
+  },
+  assetPrefix: './' // Fixes HTTP 400 when fetching
 }
 
 module.exports = withPlugins([[withBundleAnalyzer]], nextConfig)
