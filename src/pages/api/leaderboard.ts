@@ -8,6 +8,7 @@ const Leaderboard: NextApiHandler = async (req, res) => {
   res
     .status(200)
     .setHeader('Cache-Control', 's-max-age=30, stale-while-revalidate=59')
+    .setHeader('Access-Control-Allow-Origin', '*')
     .json(data.map((u) => ({ username: u.userName, bonkCount: u.count })))
 }
 
