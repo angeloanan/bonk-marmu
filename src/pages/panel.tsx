@@ -3,8 +3,6 @@ import Link from 'next/link'
 import * as React from 'react'
 import useSWR from 'swr'
 
-import { fetchLeaderboardData } from './api/leaderboard'
-
 const fetcher = (url: string) =>
   fetch('https://bonkmarmu-leaderboard.vercel.app' + url).then((r) => r.json())
 const NumberFormatter = Intl.NumberFormat('en-US', {
@@ -15,10 +13,6 @@ const NumberFormatter = Intl.NumberFormat('en-US', {
 interface LeaderboardData {
   username: string
   bonkCount: number
-}
-
-interface LeaderboardPageProps {
-  fallback: { '/api/leaderboard': LeaderboardData[] }
 }
 
 const _SampleData: LeaderboardData[] = [
@@ -41,25 +35,14 @@ const _SampleData: LeaderboardData[] = [
   { username: 'DutchMTC', bonkCount: 1 }
 ]
 
-export const getStaticProps: GetStaticProps<LeaderboardPageProps> = async () => {
-  const data = await fetchLeaderboardData()
-
-  return {
-    props: {
-      fallback: {
-        '/api/leaderboard': data.map((u) => ({ username: u.userName, bonkCount: u.count }))
-      }
-    },
-    notFound: false,
-    revalidate: 60
-  }
-}
-
-const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
+const BonkTable = () => {
   const { data } = useSWR<LeaderboardData[]>('/api/leaderboard', fetcher, {
-    fallback: { '/api/leaderboard': fallbackData },
     refreshInterval: 60000
   })
+
+  if (!data) {
+    return <div className='mt-16 text-xl font-semibold'>🥁 Drumroll please...</div>
+  }
 
   return (
     <table className='w-full max-w-prose rounded border'>
@@ -94,7 +77,7 @@ const BonkTable = ({ fallbackData }: { fallbackData: LeaderboardData[] }) => {
   )
 }
 
-const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
+const PanelPage: NextPage = (props) => {
   return (
     <div className='flex min-h-screen flex-col items-center justify-center gap-2 p-2'>
       <header className='flex-shrink-0 '>
@@ -105,7 +88,7 @@ const PanelPage: NextPage<LeaderboardPageProps> = (props) => {
       </header>
 
       <main className='flex w-full flex-1 flex-shrink basis-0 flex-col items-center overflow-y-auto '>
-        <BonkTable fallbackData={props.fallback['/api/leaderboard']} />
+        <BonkTable />
       </main>
 
       <footer className='w-full max-w-prose flex-shrink-0 font-light'>
