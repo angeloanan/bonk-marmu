@@ -21,6 +21,26 @@ interface LeaderboardPageProps {
   fallback: { '/api/leaderboard': LeaderboardData[] }
 }
 
+const _SampleData: LeaderboardData[] = [
+  { username: 'FumazDev', bonkCount: 99999 },
+  { username: 'Foo-bar', bonkCount: 42069 },
+  { username: 'OxTrtle', bonkCount: 1325 },
+  { username: 'boof', bonkCount: 1325 },
+  { username: 'AngeloPogU', bonkCount: 739 },
+  { username: 'OmarOurWoofWoof', bonkCount: 694 },
+  { username: 'OmarSmells', bonkCount: 537 },
+  { username: 'FleebenWhoop', bonkCount: 442 },
+  { username: 'DaddyWhoop', bonkCount: 422 },
+  { username: 'UwUmyOwO', bonkCount: 391 },
+  { username: 'DoughnoughtJack', bonkCount: 368 },
+  { username: 'Someone', bonkCount: 368 },
+  { username: 'Somebody', bonkCount: 368 },
+  { username: 'Once', bonkCount: 368 },
+  { username: 'Told', bonkCount: 368 },
+  { username: 'Me', bonkCount: 368 },
+  { username: 'DutchMTC', bonkCount: 1 }
+]
+
 export const getStaticProps: GetStaticProps<LeaderboardPageProps> = async () => {
   const data = await fetchLeaderboardData()
 
