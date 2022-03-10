@@ -11,7 +11,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
  **/
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: false,
   optimizeFonts: true,
   rewrites: async () => {
     return [
@@ -20,6 +20,10 @@ const nextConfig = {
         destination: '/panel'
       }
     ]
+  },
+  webpack(config, options) {
+    config.optimization.minimize = false
+    return config
   },
   assetPrefix: './' // Fixes HTTP 400 when fetching
 }
