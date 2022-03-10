@@ -23,10 +23,6 @@ const StyledPage = ({ Component, pageProps }: CustomAppProps) => {
   return (
     <div className='stylized-bg min-h-screen bg-neutral-100'>
       <Component {...pageProps} />
-      <Script
-        src='https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js'
-        strategy='beforeInteractive'
-      />
     </div>
   )
 }

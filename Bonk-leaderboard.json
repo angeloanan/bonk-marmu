@@ -25,6 +25,28 @@
       "orientation": "Portrait",
       "type": "panel",
       "viewerType": "Broadcaster"
+    },
+    {
+      "channelId": "74219053",
+      "configurationAnchor": "panel",
+      "displayChannelName": "angelopogu",
+      "features": {
+        "isBitsEnabled": false,
+        "isChatEnabled": false,
+        "isSubscriptionStatusAvailable": false
+      },
+      "frameSize": {
+        "width": 360,
+        "height": 740
+      },
+      "id": "2",
+      "isPopout": false,
+      "label": "Mobile",
+      "linked": false,
+      "linkedUserId": "",
+      "orientation": "Portrait",
+      "type": "mobile",
+      "viewerType": "Broadcaster"
     }
   ],
   "manifest": {
@@ -33,54 +55,65 @@
     "authorName": "Christopher Angelo",
     "bitsEnabled": false,
     "canInstall": true,
-    "configUrl": "http://localhost:3000/config",
+    "configUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/config.html",
     "configurationLocation": "none",
-    "description": "",
+    "description": "This leaderboard tracks for your redeemable bonks!\n\n* This is a private extension made for the streamer OmarmuLive and their alt account OmarmuAlt.",
     "eulaTosUrl": "",
     "hasChatSupport": false,
-    "iconUrl": "",
-    "iconUrls": {},
+    "iconUrl": "https://extensions-discovery-images.twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/logoa062b155-4e6a-406c-87b3-875143b20425",
+    "iconUrls": {
+      "100x100": "https://extensions-discovery-images.twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/logoa062b155-4e6a-406c-87b3-875143b20425",
+      "300x200": "https://extensions-discovery-images.twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/discoveryc00b33bc-9643-4be5-b430-9cdeee3afdcc"
+    },
     "id": "sohzczuav4izhywl7yprw5lxubtfqn",
     "installationCount": -42,
-    "liveConfigUrl": "",
-    "name": "Bonk-leaderboard",
+    "liveConfigUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/config.html",
+    "name": "Bonk Leaderboard",
     "panelHeight": 500,
     "privacyPolicyUrl": "",
     "requestIdentityLink": false,
     "requiredBroadcasterAbilities": [],
-    "screenshotUrls": [],
+    "screenshotUrls": [
+      "https://extensions-discovery-images.twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/screenshot5eaf1554-3f7f-4945-87c5-fcd2ed6ff027"
+    ],
     "sku": "",
-    "state": "Testing",
+    "state": "Pending Action",
     "subscriptionsSupportLevel": "none",
-    "summary": "",
+    "summary": "A leaderboard tracking user bonks",
     "supportEmail": "angelo@angeloanan.xyz",
     "vendorCode": "",
-    "version": "0.0.1",
-    "viewerSummary": "",
-    "viewerUrl": "http://localhost:3000/panel",
+    "version": "0.1.0",
+    "viewerSummary": "This leaderboard shows your redeemable bonks!",
+    "viewerUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/panel.html",
     "viewerUrls": {
-      "mobile": "http://localhost:3000/mobile",
-      "panel": "http://localhost:3000/panel"
+      "mobile": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/panel.html",
+      "panel": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/panel.html"
     },
     "views": {
       "mobile": {
-        "viewerUrl": "http://localhost:3000/mobile"
+        "viewerUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/panel.html"
       },
       "panel": {
-        "viewerUrl": "http://localhost:3000/panel",
+        "viewerUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/panel.html",
         "height": 500,
-        "canLinkExternalContent": false
+        "canLinkExternalContent": true
       },
       "config": {
-        "viewerUrl": "http://localhost:3000/config",
+        "viewerUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/config.html",
+        "canLinkExternalContent": false
+      },
+      "liveConfig": {
+        "viewerUrl": "https://sohzczuav4izhywl7yprw5lxubtfqn.ext-twitch.tv/sohzczuav4izhywl7yprw5lxubtfqn/0.1.0/cffbdffafb514336c595f2d69cc64ee8/config.html",
         "canLinkExternalContent": false
       }
     },
     "whitelistedConfigUrls": [],
-    "whitelistedPanelUrls": []
+    "whitelistedPanelUrls": [
+      "https://bonkmarmu-leaderboard.vercel.app"
+    ]
   },
   "frontendCommand": "yarn dev",
-  "frontendFolderName": "http://localhost:3000",
+  "frontendFolderName": "out",
   "name": "Bonk-leaderboard",
   "usingRandomFrontendHostingPort": false,
   "version": 3
