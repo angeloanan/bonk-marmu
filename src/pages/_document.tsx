@@ -13,7 +13,6 @@ class CustomDocument extends Document {
       <Html>
         <Head>
           <meta charSet='UTF-8' />
-          <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
           <script src='https://extension-files.twitch.tv/helper/v1/twitch-ext.min.js' />
         </Head>
         <body>
